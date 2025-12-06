@@ -24,3 +24,13 @@ export const getSales = async (req, res) => {
     res.status(500).json({ error: "Server error" });
   }
 };
+
+export const getSaleById = async (req, res) => {
+  try {
+    const sale = await Sale.findById(req.params.id);
+    if (!sale) return res.status(404).json({ error: "Sale not found" });
+    res.json(sale);
+  } catch (err) {
+    res.status(500).json({ error: "Server error" });
+  }
+};
