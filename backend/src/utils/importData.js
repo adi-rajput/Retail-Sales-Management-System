@@ -46,7 +46,7 @@ const importData = async () => {
       salespersonId: item["Salesperson ID"],
       employeeName: item["Employee Name"],
     }));
-    const smallSample = formatted.slice(500001, 600000);
+    const smallSample = formatted.slice(700001, 800000);
     console.log("Trying to insert 100 rows...");
     await Sale.insertMany(smallSample);
 
