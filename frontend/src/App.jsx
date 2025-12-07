@@ -77,7 +77,7 @@ const SalesManagementSystem = () => {
       params.append('sortBy', sortBy);
       params.append('sortOrder', sortOrder);
 
-      const response = await fetch(`http://localhost:5000/api/sales?${params}`);
+      const response = await fetch(`${import.meta.env.API_URL}/api/sales?${params}`);
       const data = await response.json();
       
       setSalesData(data.data || []);
@@ -106,7 +106,7 @@ const SalesManagementSystem = () => {
   // Fetch single sale detail
   const fetchSaleDetail = async (id) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/sales/${id}`);
+      const response = await fetch(`${import.meta.env.API_URL}/api/sales/${id}`);
       const data = await response.json();
       setSelectedSale(data);
     } catch (error) {
