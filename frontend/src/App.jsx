@@ -115,7 +115,7 @@ const SalesManagementSystem = () => {
       params.append("sortOrder", sortOrder);
 
       const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/api/sales?${params}`
+        `https://retail-sales-management-system-vuaj.onrender.com/api/sales?${params}`
       );
 
       const data = await response.json();
@@ -153,7 +153,7 @@ const SalesManagementSystem = () => {
   const fetchSaleDetail = async (id) => {
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/api/sales/${id}`
+        `https://retail-sales-management-system-vuaj.onrender.com/api/sales/${id}`
       );
 
       const data = await response.json();
